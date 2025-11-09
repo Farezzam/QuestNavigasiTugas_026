@@ -163,3 +163,16 @@ fun Formulir(navController: NavHostController) {
         }
     }
 }
+
+@Composable
+fun FormLabel(text: String) {
+    Text(
+        text = text,
+        fontWeight = FontWeight.Bold,
+        fontSize = 15.sp,
+        color = Color.LightGray,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 4.dp)
+    )
+}
