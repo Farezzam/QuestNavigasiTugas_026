@@ -7,9 +7,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -75,3 +80,23 @@ fun Dasboard(navController: NavHostController) {
                     color = Color.LightGray
                 )
             }
+            Button(
+                onClick = { navController.navigate(Navigasi.TampilData.name) },
+                modifier = Modifier
+                    .fillMaxWidth(0.8f)
+                    .height(50.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.White
+                ),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(
+                    "Lihat Data Peserta",
+                    color = Color(0xFF313647),
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+    }
+}
