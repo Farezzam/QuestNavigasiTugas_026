@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pertemuan6"
+    namespace = "com.example.navigasiku"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.pertemuan6"
+        applicationId = "com.example.navigasiku"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
