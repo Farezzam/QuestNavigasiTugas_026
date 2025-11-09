@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.navigasiku.view.Dasboard
+import com.example.navigasiku.view.Formulir
+import com.example.navigasiku.view.TampilData
 
 enum class Navigasi {
     Dasboard,
