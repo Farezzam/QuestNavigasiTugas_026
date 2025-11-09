@@ -1,6 +1,7 @@
 package com.example.navigasiku.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -126,3 +128,38 @@ fun Formulir(navController: NavHostController) {
                 Text("Kembali", color = Color.White)
             }
         }
+
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+                title = {
+                    Text("Data Berhasil Disimpan", fontWeight = FontWeight.Bold)
+                },
+                text = {
+                    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Text("Nama: $nama")
+                        Text("Gender: $jenisKelamin")
+                        Text("Status: $status")
+                        Text("Alamat: $alamat")
+                    }
+                },
+                confirmButton = {
+                    TextButton(
+                        onClick = {
+                            showDialog = false
+                            nama = ""
+                            jenisKelamin = ""
+                            status = ""
+                            alamat = ""
+                        }
+                    ) {
+                        Text("Tutup")
+                    }
+                },
+                containerColor = Color.White,
+                titleContentColor = Color.Black,
+                textContentColor = Color.DarkGray
+            )
+        }
+    }
+}
