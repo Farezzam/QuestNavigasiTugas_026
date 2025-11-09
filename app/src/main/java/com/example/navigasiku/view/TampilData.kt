@@ -13,6 +13,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -153,6 +155,44 @@ fun TampilData(navController: NavHostController) {
                     fontWeight = FontWeight.Bold
                 )
             }
+        }
+    }
+}
+
+@Composable
+fun PesertaCard(peserta: FormData) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        elevation = CardDefaults.cardElevation(8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFFF6F6F6)
+        )
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                text = peserta.nama,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Gender: ${peserta.gender}",
+                fontSize = 16.sp,
+                color = Color.DarkGray
+            )
+            Text(
+                text = "Status: ${peserta.status}",
+                fontSize = 16.sp,
+                color = Color.DarkGray
+            )
+            Text(
+                text = "Alamat: ${peserta.alamat}",
+                fontSize = 16.sp,
+                color = Color.DarkGray
+            )
         }
     }
 }
